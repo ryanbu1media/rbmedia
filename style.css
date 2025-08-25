@@ -1,0 +1,276 @@
+/* ──────────────── TYPOGRAPHY ──────────────── */
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26.4px;
+}
+h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 15.4px;
+}
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+blockquote {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 30px;
+}
+pre {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+
+/* ──────────────── RESET & BASE ──────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  background: white;
+  text-transform: lowercase;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ──────────────── SECTION: CONTAINER ──────────────── */
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ──────────────── SECTION: PARALLAX ITEMS ──────────────── */
+.parallax-item {
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+
+/* ──────────────── SECTION: EARTH IMAGE ──────────────── */
+.earth {
+  position: absolute;
+  left: -7%;
+  top: -100px;
+  width: 100vw;
+  z-index: 1;
+}
+
+/* ──────────────── SECTION: PURPLE LINE IMAGE ──────────────── */
+.curve-img {
+  position: absolute;
+  top: -36%;
+  left: -1%;
+  width: 106%;
+  height: auto;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* ──────────────── SECTION: TOP TEXT ──────────────── */
+.top-text {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  font-size: 1rem;
+  z-index: 2;
+}
+
+/* ──────────────── SECTION: NAME BOX ──────────────── */
+.name-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%) rotate(-2deg);
+  padding: 0px 30px;
+  border: 3px solid blue;
+  background: transparent;
+  z-index: 6;
+  height: 190px;
+  width: 240px;
+}
+.name-box .label {
+  position: absolute;
+  top: -14px;
+  left: -14px;
+  background: blue;
+  color: white;
+  font-size: 14px;
+  padding: 4px 8px;
+  z-index: 7;
+}
+.name-box .name {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  font-size: 5rem;
+  font-weight: 900;
+  letter-spacing: 8px;
+  color: black;
+  opacity: 0.95;
+  transform: perspective(500px) rotateX(0deg) rotateY(0deg);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, opacity 0.3s ease, color 0.6s ease;
+  z-index: 2;
+  user-select: none;
+}
+.name-box .name:hover {
+  transform: perspective(500px) rotateX(15deg) rotateY(20deg) translateY(0px);
+  color: #292929;
+}
+
+/* ──────────────── SECTION: WEBSITE IMAGE ──────────────── */
+.website-img {
+  position: absolute;
+  top: 18%;
+  right: 28%;
+  width: 520px;
+  height: auto;
+  object-fit: cover;
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+/* ──────────────── SECTION: HELVETICA TEXT ──────────────── */
+.helvetica {
+  position: absolute;
+  bottom: 1%;
+  left: 40%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  z-index: 3;
+}
+
+/* ──────────────── SECTION: GIRL IMAGE ──────────────── */
+.girl-img {
+  position: absolute;
+  top: 80%;
+  left: 85%;
+  width: 190px;
+  height: auto;
+  z-index: 4;
+  --girl-transform: scale(1.8) rotate(5deg);
+}
+
+/* ──────────────── SECTION: EXTRA IMAGE ──────────────── */
+.extra-img {
+  position: absolute;
+  top: 76%;
+  left: 63%;
+  width: 400px;
+  height: auto;
+  z-index: 3;
+}
+
+/* ──────────────── SECTION: GREEN IMAGE ──────────────── */
+.green-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+.green-bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56%;
+  height: auto;
+  transform: translateX(700px) translateY(400px);
+  will-change: transform;
+}
+
+/* ──────────────── SECTION: INSTAGRAM LOGO ──────────────── */
+.insta-logo-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 90%; /* 👈 pushes it toward the right edge */
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.insta-logo-wrapper:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+.insta-logo {
+  width: 110%;
+  height: 100%;
+  display: block;
+  pointer-events: auto;
+}
+
+/* ──────────────── SECTION: RESPONSIVE ──────────────── */
+@media (max-width: 768px) {
+  .earth {
+    width: 100%;
+    top: -50px;
+    left: 0;
+  }
+
+  .curve-img {
+    top: -20%;
+    left: -5%;
+    width: 120%;
+  }
+
+  .name-box {
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-2deg);
+    padding: 10px;
+  }
+
+  .name-box .name {
+    font-size: 3rem;
+    letter-spacing: 4px;
+  }
+
+  .website-img {
+    top: 50%;
+    right: 10%;
+    width: 300px;
+  }
+
+  .helvetica {
+    bottom: 10%;
+    left: 5%;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 90%;
+  }
+
+  .top-text {
+    top: 5%;
+    left: 5%;
+    font-size: 0.9rem;
+    width: 90%;
+  }
+
+  .girl-img {
+    top: 85%;
+    left: 60%;
+    width: 100px;
+    --girl-transform: scale(1.2) rotate(5deg);
+  }
+}
