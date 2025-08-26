@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>rbmedia</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
 <body>
   <div class="custom-cursor" aria-hidden="true"></div> <!-- ✅ Outside .container -->
 
   <div class="container">
     <!-- Existing content remains untouched -->
-    <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/0090.png?updatedAt=1756006801904" alt="Earth" class="earth parallax-item" data-depth="0.2"/>
+    <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/0090.png?updatedAt=1756006801904" alt="Earth" class="earth parallax-item" data-depth="0.1"/>
     <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/line.png?updatedAt=1756013623452" alt="Purple Line" class="curve-img parallax-item" data-depth="0.6"/>
     <p class="top-text parallax-item" data-depth="0.3">totally trust me... i think.</p>
 
-    <div class="name-box parallax-item" data-depth="0.8" data-base-transform="translate(-50%, -50%) rotate(-2deg)">
+    <div class="name-box parallax-item" data-depth="1.5" data-base-transform="translate(-50%, -50%) rotate(-2deg)">
       <span class="label">bui</span>
       <h1 class="name">ryan</h1>
     </div>
@@ -27,7 +17,12 @@
          class="website-img parallax-item"
          data-depth="0.5" />
 
-    <p class="helvetica parallax-item" data-depth="0.4">i’m a helvetica freak but i dont know how to code that in</p>
+<div id="scene">
+  <p class="helvetica parallax-item" data-depth="0.3">
+    i’m a helvetica freak <br>but i don’t know how to code that in
+  </p>
+</div>
+
 
     <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/girl.png?updatedAt=1756019737393"
          alt="Girl"
@@ -43,10 +38,10 @@
     <!-- ✅ Final Instagram logo: parallax-ready, modular, expressive -->
    <div class="insta-logo-wrapper">
   <img
-    src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/instagram-logo-black-transparent.png?updatedAt=1756110578724"
+    src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/5279112_camera_instagram_social%20media_instagram%20logo_icon.png?updatedAt=1756190405570"
     alt="Instagram"
     class="insta-logo parallax-item"
-    data-depth="0.6"
+    data-depth="0.3"
     data-base-transform="translate3d(-50%, -50%, 0)"
     onclick="window.open('https://www.instagram.com/ryanbu11/', '_blank')"
   />
@@ -120,38 +115,126 @@
   </script>
 
   <!-- ✅ Custom cursor tracking -->
-  <script>
-    (() => {
-      const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-      if (!isDesktop) return;
-
-      const cursor = document.querySelector('.custom-cursor');
-      if (!cursor) return;
-
-      document.body.classList.add('cursor-enabled');
-
-      let x = 0, y = 0, tx = 0, ty = 0;
-      const ease = 0.18;
-
-      function raf() {
-        x += (tx - x) * ease;
-        y += (ty - y) * ease;
-        cursor.style.left = x + 'px';
-        cursor.style.top  = y + 'px';
-        requestAnimationFrame(raf);
-      }
-
-      window.addEventListener('mousemove', e => {
-        tx = e.clientX;
-        ty = e.clientY;
-      }, { passive: true });
-
-      raf();
-    })();
+  
   </script>
 </body>
-<!-- partial -->
-  <script  src="./script.js"></script>
+<div class="tiktok-logo-wrapper">
+  <img
+    src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/7693325_tiktok_social%20media_logo_apps_icon.png?updatedAt=1756189077500"
+    alt="TikTok"
+    class="tiktok-logo parallax-item"
+    data-depth="0.3"
+    data-base-transform="translate3d(-50%, -50%, 0)"
+    onclick="window.open('https://www.tiktok.com/@ryanbu1_', '_blank')"
+       
+       
+  />
+</div>
+  <div class="youtube-logo-wrapper">
+  <img
+    src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/5279120_play_video_youtube_youtuble%20logo_icon.png?updatedAt=1756193334569"
+    alt="YouTube"
+    class="youtube-logo parallax-item"
+    data-depth="0.3"
+    data-base-transform="translate3d(-50%, -50%, 0)"
+    onclick="window.open('https://www.youtube.com/@ryan_bu1', '_blank')"
+  />
+</div>
+<img
+  src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a6590ce121fc.png?updatedAt=1756105534835"
+  alt="Green Screenshot"
+  class="green-screenshot parallax-item"
+ data-depth="0.2"
+    data-base-transform="translate3d(-50%, -50%, 0)"
+/>
+<!-- ✅ Final Payhip logo: parallax-ready, modular, expressive -->
+<div class="payhip-logo-wrapper">
+  <img
+    src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/download%20(10).png?updatedAt=1756194688199"
+    alt="Payhip"
+    class="payhip-logo parallax-item"
+    data-depth="0.3"
+    data-base-transform="translate3d(-50%, -50%, 0)"
+    onclick="window.open('https://payhip.com/ryanbu11', '_blank')"
+    width="40"
+    height="38"
+  />
+</div>
+<!-- ✅ Final Spotify logo: parallax-ready, modular, expressive -->
+<div class="spotify-logo-wrapper">
+  <img
+    src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/2559779_media_network_social_spotify_icon.png?updatedAt=1756195904508"
+    alt="Spotify"
+    class="spotify-logo parallax-item"
+    data-depth="0.3"
+    data-base-transform="translate3d(-50%, -50%, 0)"
+    onclick="window.open('https://open.spotify.com/user/31rydhfcuks3ke5qy2fs27xiu6j4', '_blank')"
+    width="40"
+    height="40"
+  />
+</div>
+<div class="logo-wrapper github-logo-wrapper" data-tooltip="code graveyard or playground?"></div>
+<div class="logo-wrapper insta-logo-wrapper" data-tooltip="curated chaos in square format"></div>
+<div class="logo-wrapper twitter-logo-wrapper" data-tooltip="echo chamber or megaphone?"></div>
+<div class="logo-wrapper tiktok-logo-wrapper" data-tooltip="scroll until you forget your name"></div>
+<div class="logo-wrapper payhip-logo-wrapper" data-tooltip="support the chaos"></div>
+<img
+  src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90realbgce121fc.png?updatedAt=1756197604569"
+  alt="Skate Background"
+  class="skate-bg parallax-item"
+  data-depth="0.5"
+  data-base-transform="translate3d(-50%, -50%, 0)"
+/>
 
-</body>
-</html>
+<div class="scene-code-text">
+window.addEventListener("DOMContentLoaded", () => {
+  const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if (isDesktop) {
+    document.body.classList.add('cursor-enabled');
+  }
+
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  function updateTarget(x, y) {
+    targetX = (x / window.innerWidth - 0.5) * 20;
+    targetY = (y / window.innerHeight - 0.5) * 20;
+  }
+
+  document.addEventListener("mousemove", (e) => {
+    updateTarget(e.clientX, e.clientY);
+  });
+
+  document.addEventListener("touchmove", (e) => {
+    if (e.touches.length > 0) {
+      updateTarget(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  });
+
+  function animateParallax() {
+    currentX += (targetX - currentX) * 0.1;
+    currentY += (targetY - currentY) * 0.1;
+
+    document.querySelectorAll(".parallax-item").forEach((el) => {
+      const depth = parseFloat(el.dataset.depth) || 1;
+      const moveX = currentX * depth;
+      const moveY = currentY * depth;
+
+      const base = el.dataset.baseTransform || "";
+      el.style.transform = `${base} translate(${moveX}px, ${moveY}px)`;
+    });
+
+    requestAnimationFrame(animateParallax);
+  }
+
+  animateParallax();
+  haha coding is NOT fun... big thanks to chatgpt 
+});
+  
+  
+</div>
+  
+  
+<script>
