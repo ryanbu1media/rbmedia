@@ -1,3 +1,17 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+
+
+
+
+
+
 /* ──────────────── TYPOGRAPHY ──────────────── */
 
 h1 {
