@@ -1,40 +1,39 @@
 <script>
 window.addEventListener("DOMContentLoaded", () => {
-  // Enable desktop cursor enhancements
+  // ── Parallax setup ──
   const isDesktop = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (!isDesktop) return;
 
   document.body.classList.add("cursor-enabled");
 
-  // ── Parallax setup ──
-  let targetX = 0, targetY = 0;
-  let currentX = 0, currentY = 0;
+  // Parallax variables
+  let pTargetX = 0, pTargetY = 0;
+  let pCurrentX = 0, pCurrentY = 0;
 
-  function updateTarget(x, y) {
-    targetX = (x / window.innerWidth - 0.5) * 20;
-    targetY = (y / window.innerHeight - 0.5) * 20;
+  function updateParallaxTarget(x, y) {
+    pTargetX = (x / window.innerWidth - 0.5) * 20;
+    pTargetY = (y / window.innerHeight - 0.5) * 20;
   }
 
   document.addEventListener("mousemove", (e) => {
-    updateTarget(e.clientX, e.clientY);
+    updateParallaxTarget(e.clientX, e.clientY);
   });
 
-  // ── Parallax animation loop ──
-  function animateFrame() {
-    currentX += (targetX - currentX) * 0.1;
-    currentY += (targetY - currentY) * 0.1;
+  function animateParallax() {
+    pCurrentX += (pTargetX - pCurrentX) * 0.1;
+    pCurrentY += (pTargetY - pCurrentY) * 0.1;
 
     document.querySelectorAll(".parallax-item").forEach((el) => {
       const depth = parseFloat(el.dataset.depth) || 1;
-      const moveX = currentX * depth;
-      const moveY = currentY * depth;
+      const moveX = pCurrentX * depth;
+      const moveY = pCurrentY * depth;
       const base = el.dataset.baseTransform || "";
       el.style.transform = `${base} translate(${moveX}px, ${moveY}px)`;
     });
 
-    requestAnimationFrame(animateFrame);
+    requestAnimationFrame(animateParallax);
   }
 
-  requestAnimationFrame(animateFrame);
-});
-</script>
+  requestAnimationFrame(animateParallax);
+
+  

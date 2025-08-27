@@ -454,3 +454,13 @@ body {
   z-index:1;
   pointer-events: none;
 }
+#neko {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  background-image: url("https://ik.imagekit.io/kojn6gq8q/NEKO/awake.png?updatedAt=1756244146650");
+  background-size: contain;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: 9999;
+}
