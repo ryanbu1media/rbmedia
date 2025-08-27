@@ -60,6 +60,7 @@ html, body {
   text-transform: lowercase;
   position: relative;
   overflow: hidden;
+    z-index: -100;
 }
 
 /* ──────────────── SECTION: CONTAINER ──────────────── */
@@ -79,7 +80,7 @@ html, body {
 .earth {
   position: absolute;
   left: -7%;
-  top: -100px;
+  top: -10px;
   width: 100vw;
   z-index: 1;
 }
@@ -107,14 +108,14 @@ html, body {
 /* ──────────────── SECTION: NAME BOX ──────────────── */
 .name-box {
   position: absolute;
-  top: 50%;
+  top:50%;
   left: 50%;
   transform: translate(-50%, -55%) rotate(-2deg);
   padding: 0px 30px;
   border: 3px solid blue;
   background: transparent;
   z-index: 6;
-  height: 190px;
+  height: 110px;
   width: 240px;
 }
 .name-box .label {
@@ -129,7 +130,7 @@ html, body {
 }
 .name-box .name {
   position: absolute;
-  top: 60px;
+  top: 30px;
   left: 10px;
   font-size: 5rem;
   font-weight: 900;
@@ -159,6 +160,14 @@ html, body {
   transition: transform 0.3s ease;
 }
 
+/* Hover effect applied to all parallax items */
+.parallax-item:hover {
+  transform: scale(1.05) rotate(53deg);
+  cursor: pointer;
+  transition: transform 0.7s ease;
+}
+
+
 /* ──────────────── SECTION: HELVETICA TEXT ──────────────── */
 .helvetica {
   position: absolute;
@@ -184,7 +193,7 @@ html, body {
 .extra-img {
   position: absolute;
   top: 76%;
-  left: 63%;
+  left: 70%;
   width: 400px;
   height: auto;
   z-index: 3;
@@ -371,6 +380,7 @@ body {
 .payhip-logo-wrapper:hover {
   transform: translate(-50%, -50%) scale(1.2);
 }
+
 .spotify-logo-wrapper {
  position: fixed;
   top: 50%;
@@ -387,28 +397,29 @@ body {
   transform: translate(-50%, -50%) scale(1.2);
 }
 .insta-logo-wrapper {
-  top: 30%;
-  left: 96%;
+  top: 70%;
+  left: 44%;
 }
 
 .tiktok-logo-wrapper {
-  top: 30%;
-  left: 92%;
+  top: 70%;
+  left: 56%;
 }
 
 .youtube-logo-wrapper {
-  top: 30%;
-  left: 88%;
+  top: 70%;
+  left: 52%;
 }
 
 .payhip-logo-wrapper {
-  top: 30%;
-  left: 84%;
+  top: 70%;
+  left: 48%;
 }
 
 .spotify-logo-wrapper {
-  top: 30%;
-  left: 80%;
+  top: 70%;
+  left: 60%;
+  
 }
 .logo-wrapper {
   position: relative;
@@ -454,13 +465,61 @@ body {
   z-index:1;
   pointer-events: none;
 }
-#neko {
-  position: fixed;
-  width: 64px;
-  height: 64px;
-  background-image: url("https://ik.imagekit.io/kojn6gq8q/NEKO/awake.png?updatedAt=1756244146650");
-  background-size: contain;
-  background-repeat: no-repeat;
+.skate-overlay {
+  position: absolute;
+  top: 70%;
+  left: 85%;
+  transform: translate3d(-50%, -50%, 0);
   pointer-events: none;
-  z-index: 9999;
+  z-index: -3; /* Adjust based on layering needs */
+  max-width: 100%;
+  height: auto;
 }
+.scrolling-subtitles {
+  position: fixed;
+  bottom: 96vh;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+  background: black; /* 👈 Black background added */
+  padding: 0.5em 0;
+}
+
+.subtitle-track {
+  display: inline-block;
+  animation: scroll-subtitles 20s linear infinite;
+}
+
+.subtitle {
+  display: inline-block;
+  margin: 0 2rem;
+  font-size: 0.7rem;
+  color: yellow;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.6);
+}
+
+@keyframes scroll-subtitles {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+    
+  }
+}
+.collage-sprite {
+  position: absolute;
+  top: 86vh;
+  left: 10vw;
+  z-index: 5;
+  pointer-events: none;
+  transform: translateZ(0); /* Ensures GPU acceleration */
+}
+
+.collage-sprite img {
+  width: 200px;
+  max-width: 30vw;
+

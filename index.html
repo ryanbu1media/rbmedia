@@ -2,6 +2,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  (function() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+
+    var isMobile = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(ua.toLowerCase());
+
+    if (isMobile) {
+      window.location.href = "https://rbmed1a.carrd.co/";
+    }
+  })();
+</script>
+
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +26,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>rbmed1a</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
@@ -56,7 +68,7 @@
     <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a6590ce121fc.png?updatedAt=1756105534835" alt="Green Screenshot" class="green-screenshot parallax-item" data-depth="0.2" data-base-transform="translate3d(-50%, -50%, 0)" />
 
     <div class="payhip-logo-wrapper">
-      <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/download%20(10).png?updatedAt=1756194688199" alt="Payhip" class="payhip-logo parallax-item" data-depth="0.3" data-base-transform="translate3d(-50%, -50%, 0)" onclick="window.open('https://payhip.com/ryanbu11', '_blank')" width="40" height="38" />
+      <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/download%20(10).png?updatedAt=1756194688199" alt="Payhip" class="payhip-logo parallax-item" data-depth="0.3" data-base-transform="translate3d(-50%, -50%, 0)" onclick="window.open('https://payhip.com/Ryanbu1', '_blank')" width="40" height="38" />
     </div>
 
     <div class="spotify-logo-wrapper">
@@ -72,53 +84,95 @@
     <div class="logo-wrapper tiktok-logo-wrapper" data-tooltip="scroll until you forget your name"></div>
     <div class="logo-wrapper payhip-logo-wrapper" data-tooltip="support the chaos"></div>
   </div>
+  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90ce121fc.png?updatedAt=1756280360487"
+     alt="Skate Overlay"
+     class="skate-overlay parallax-item"
+     data-depth="0.1"
+     data-base-transform="translate3d(-50%, -50%, 0)" />
+
+<div class="scrolling-subtitles">
+  <div class="subtitle-track">
+    <span class="subtitle">made by ryan bui</span>
+    <span class="subtitle">pixels remember everything</span>
+    <span class="subtitle">move to feel</span>
+    <span class="subtitle">poetic glitches are intentional</span>
+    <span class="subtitle">haha stimulation website</span>
+  </div>
+</div>
+<div class="collage-sprite" data-depth="0.3">
+  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/cat.png?updatedAt=1756282060841" alt="ghost cat">
+</div>
 
   <!-- Parallax & Cursor Script -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const isMobile = window.innerWidth <= 768;
-      const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const isMobile = window.innerWidth <= 768;
+    const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-      if (isMobile) document.body.classList.add("mobile-mode");
-      if (isDesktop) document.body.classList.add("cursor-enabled");
+    if (isMobile) document.body.classList.add("mobile-mode");
+    if (isDesktop) document.body.classList.add("cursor-enabled");
 
-      let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
+    let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
 
-      function updateTarget(x, y) {
-        targetX = (x / window.innerWidth - 0.5) * 20;
-        targetY = (y / window.innerHeight - 0.5) * 20;
-        if (isDesktop) spawnGhost(x, y);
-      }
+    function updateTarget(x, y) {
+      targetX = (x / window.innerWidth - 0.5) * 20;
+      targetY = (y / window.innerHeight - 0.5) * 20;
+      if (isDesktop) spawnGhost(x, y);
+    }
 
-      document.addEventListener("mousemove", e => updateTarget(e.clientX, e.clientY));
-      document.addEventListener("touchmove", e => {
-        if (e.touches.length > 0) updateTarget(e.touches[0].clientX, e.touches[0].clientY);
+    document.addEventListener("mousemove", e => updateTarget(e.clientX, e.clientY));
+    document.addEventListener("touchmove", e => {
+      if (e.touches.length > 0) updateTarget(e.touches[0].clientX, e.touches[0].clientY);
+    });
+
+    // ── Hover scale/rotate setup ──
+    const hoverState = new Map();
+    document.querySelectorAll(".parallax-item").forEach(el => {
+      hoverState.set(el, { scale: 1, rotate: 0, targetScale: 1, targetRotate: 0 });
+
+      el.addEventListener("mouseenter", () => {
+        const state = hoverState.get(el);
+        state.targetScale = 1.05;
+        state.targetRotate = 2;
       });
 
-      function animateParallax() {
-        currentX += (targetX - currentX) * 0.1;
-        currentY += (targetY - currentY) * 0.1;
-
-        document.querySelectorAll(".parallax-item").forEach(el => {
-          const depth = parseFloat(el.dataset.depth) || 1;
-          const moveX = currentX * depth;
-          const moveY = currentY * depth;
-          const base = el.dataset.baseTransform || "";
-          el.style.transform = `${base} translate(${moveX}px, ${moveY}px)`;
-        });
-
-        requestAnimationFrame(animateParallax);
-      }
-
-      animateParallax();
-
-      function spawnGhost(x, y) {
-        const ghost = document.createElement('div');
-        ghost.className = 'cursor-ghost';
-        ghost.style.left = x + 'px';
-        ghost.style.top = y + 'px';
-        document.body.appendChild(ghost);
-        setTimeout(() => ghost.remove(), 300);
-      }
+      el.addEventListener("mouseleave", () => {
+        const state = hoverState.get(el);
+        state.targetScale = 1;
+        state.targetRotate = 0;
+      });
     });
-  </script>
+
+    function animateParallax() {
+      currentX += (targetX - currentX) * 0.1;
+      currentY += (targetY - currentY) * 0.1;
+
+      document.querySelectorAll(".parallax-item").forEach(el => {
+        const depth = parseFloat(el.dataset.depth) || 1;
+        const moveX = currentX * depth;
+        const moveY = currentY * depth;
+        const base = el.dataset.baseTransform || "";
+
+        // Smooth hover interpolation
+        const state = hoverState.get(el);
+        state.scale += (state.targetScale - state.scale) * 0.1;
+        state.rotate += (state.targetRotate - state.rotate) * 0.1;
+
+        el.style.transform = `${base} translate(${moveX}px, ${moveY}px) scale(${state.scale}) rotate(${state.rotate}deg)`;
+      });
+
+      requestAnimationFrame(animateParallax);
+    }
+
+    animateParallax();
+
+    function spawnGhost(x, y) {
+      const ghost = document.createElement('div');
+      ghost.className = 'cursor-ghost';
+      ghost.style.left = x + 'px';
+      ghost.style.top = y + 'px';
+      document.body.appendChild(ghost);
+      setTimeout(() => ghost.remove(), 300);
+    }
+  });
+</script>
