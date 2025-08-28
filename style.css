@@ -301,7 +301,7 @@ pre { font-size: 13px; line-height: 18.57px; }
 
 .orange-img {
   position: absolute;
-  top: 40%;   /* vertical position */
+  top: 44%;   /* vertical position */
   left: -30%;   /* further to the left */
   width: 800px; /* adjust size if needed */
   height: auto;
@@ -309,4 +309,3 @@ pre { font-size: 13px; line-height: 18.57px; }
   z-index: 0;
   filter: blur(0px);   /* adjust value (px) for more/less blur */
 }
-
