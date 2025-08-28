@@ -47,7 +47,7 @@ pre { font-size: 13px; line-height: 18.57px; }
   position: relative;
   width: 100%;
   min-height: 100vh;
-  z-index: 1;
+  z-index: ;
 }
 
 /* ──────────────── COLLAGE ELEMENTS ──────────────── */
@@ -56,7 +56,7 @@ pre { font-size: 13px; line-height: 18.57px; }
   left: -7%;
   top: -10px;
   width: 100vw;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
   user-select: none;
 }
@@ -251,16 +251,17 @@ pre { font-size: 13px; line-height: 18.57px; }
   bottom: 96vh;
   width: 100%;
   overflow: hidden;
-  white-space: nowrap;
-  z-index: 10;
-  pointer-events: none;
   background: black;
   padding: 0.5em 0;
+  pointer-events: none;
+  z-index: 10;
 }
 
 .subtitle-track {
   display: inline-block;
-  animation: scroll-subtitles 20s linear infinite;
+  white-space: nowrap;
+  animation: scroll-subtitles 60s linear infinite;
+  will-change: transform;
 }
 
 .subtitle {
@@ -273,24 +274,39 @@ pre { font-size: 13px; line-height: 18.57px; }
 }
 
 @keyframes scroll-subtitles {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Scroll halfway through duplicated content */
 }
 
-/* ──────────────── COLLAGE SPRITE ──────────────── */
-.collage-sprite {
+
+.dogsad-img {
   position: absolute;
-  top: 86vh;
-  left: 10vw;
+  top: 85%;   /* vertical position */
+  left: 2%;   /* further to the left */
+  width: 200px; /* adjust size if needed */
+  height: auto;
   z-index: 5;
-  pointer-events: none;
-  transform: translateZ(0);
-}
-.collage-sprite img {
-  width: 200px;
-  max-width: 30vw;
 }
 
-/* ──────────────── OPTIONAL MOBILE OVERRIDES ──────────────── */
-/*
-@media (max-width:
+.cyber-img {
+  position: absolute;
+  top: 30%;   /* vertical position */
+  left: 54%;   /* further to the left */
+  width: 180px; /* adjust size if needed */
+  height: auto;
+  z-index: 3;
+  filter: blur(0px);   /* adjust value (px) for more/less blur */
+}
+
+
+.orange-img {
+  position: absolute;
+  top: 40%;   /* vertical position */
+  left: -30%;   /* further to the left */
+  width: 800px; /* adjust size if needed */
+  height: auto;
+  transform: rotate(55deg);
+  z-index: 0;
+  filter: blur(0px);   /* adjust value (px) for more/less blur */
+}
+
