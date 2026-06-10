@@ -1,4 +1,3 @@
-/* ──────────────── RESET & BASE ──────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +16,6 @@ html, body {
   user-select: none;
 }
 
-/* ──────────────── TYPOGRAPHY ──────────────── */
 h1, h3, p, blockquote, pre {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -27,23 +25,22 @@ p  { font-size: 14px; font-weight: 400; line-height: 20px; }
 blockquote { font-size: 21px; line-height: 30px; }
 pre { font-size: 13px; line-height: 18.57px; }
 
-/* ──────────────── PARALLAX ITEMS ──────────────── */
 .parallax-item {
   will-change: transform;
-  transition: transform 0.7s ease-out; /* Keeps the smooth organic linger effect */
+  transition: transform 0.7s ease-out; 
 }
 .parallax-item:hover {
   cursor: pointer;
 }
 
-/* ──────────────── CONTAINER ──────────────── */
+
 .container {
   position: relative;
   width: 100%;
   min-height: 100vh;
 }
 
-/* ──────────────── COLLAGE ELEMENTS ──────────────── */
+
 .earth {
   position: absolute;
   left: -7%;
@@ -194,7 +191,6 @@ pre { font-size: 13px; line-height: 18.57px; }
   height: auto;
 }
 
-/* ──────────────── SOCIAL ICONS ──────────────── */
 .logo-wrapper {
   position: relative;
 }
@@ -240,7 +236,7 @@ pre { font-size: 13px; line-height: 18.57px; }
   pointer-events: auto;
 }
 
-/* ──────────────── SCROLLING SUBTITLES ──────────────── */
+
 .scrolling-subtitles {
   position: fixed;
   bottom: 96vh;
@@ -273,7 +269,6 @@ pre { font-size: 13px; line-height: 18.57px; }
   100% { transform: translateX(-50%); } 
 }
 
-/* ──────────────── STANDALONE IMAGES ──────────────── */
 .dogsad-img {
   position: absolute;
   top: 85%;
@@ -304,7 +299,7 @@ pre { font-size: 13px; line-height: 18.57px; }
   filter: blur(0px);
 }
 
-/* ──────────────── CUSTOM CURSOR & GHOST ──────────────── */
+
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -327,7 +322,7 @@ pre { font-size: 13px; line-height: 18.57px; }
   background: rgba(0, 0, 0, 0.25);
   pointer-events: none;
   z-index: 99998;
-  /* cubic-bezier makes the deceleration trail look much slicker */
+
   animation: ghostFade 4s cubic-bezier(0.1, 0.8, 0.25, 1) forwards;
 }
 
@@ -342,7 +337,7 @@ pre { font-size: 13px; line-height: 18.57px; }
   }
 }
 
-/* ──────────────── RESPONSIVE MEDIA QUERIES ──────────────── */
+
 @media (max-width: 1024px) {
   .website-img {
     width: 60vw;
@@ -368,4 +363,31 @@ pre { font-size: 13px; line-height: 18.57px; }
     top: 30%;
     width: 90vw;
   }
+}
+
+#trail-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -8;
+ 
+}
+
+.trail-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 1435px;
+  padding: 8px 15px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+  font-family: Helvetica, sans-serif;
+  text-transform: lowercase;
 }

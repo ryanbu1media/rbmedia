@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>rbmedia</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -7,7 +18,6 @@
   <title>rbmed1a</title>
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Mobile Redirect -->
   <script>
     (function() {
       var ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -21,14 +31,13 @@
 
 <body>
   <div class="custom-cursor" aria-hidden="true"></div>
-
-  <div class="container">
+  <canvas id="trail-canvas"></canvas> <div class="container">
     <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/0090.png?updatedAt=1756006801904" alt="Earth" class="earth parallax-item" data-depth="0.1" />
     <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/line.png?updatedAt=1756013623452" alt="Purple Line" class="curve-img parallax-item" data-depth="0.6" />
-<a href=https://i.pinimg.com/736x/6d/9e/a6/6d9ea67629bf99a240a83e30417a8493.jpg class="top-text parallax-item" data-depth="0.3">
-  totally trust me... i think.
-</a>
-
+    
+    <a href="https://i.pinimg.com/736x/6d/9e/a6/6d9ea67629bf99a240a83e30417a8493.jpg" class="top-text parallax-item" data-depth="0.3">
+      totally trust me... i think.
+    </a>
 
     <div class="name-box parallax-item" data-depth="1.5" data-base-transform="translate(-50%, -50%) rotate(-2deg)">
       <span class="label">bui</span>
@@ -69,145 +78,41 @@
     </div>
 
     <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90realbgce121fc.png?updatedAt=1756197604569" alt="Skate Background" class="skate-bg parallax-item" data-depth="0.5" data-base-transform="translate3d(-50%, -50%, 0)" />
-
-    <!-- Tooltip wrappers -->
-    <div class="logo-wrapper github-logo-wrapper" data-tooltip="code graveyard or playground?"></div>
-    <div class="logo-wrapper insta-logo-wrapper" data-tooltip="curated chaos in square format"></div>
-    <div class="logo-wrapper twitter-logo-wrapper" data-tooltip="echo chamber or megaphone?"></div>
-    <div class="logo-wrapper tiktok-logo-wrapper" data-tooltip="scroll until you forget your name"></div>
-    <div class="logo-wrapper payhip-logo-wrapper" data-tooltip="support the chaos"></div>
   </div>
-  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90ce121fc.png?updatedAt=1756280360487"
-     alt="Skate Overlay"
-     class="skate-overlay parallax-item"
-     data-depth="0.1"
-     data-base-transform="translate3d(-50%, -50%, 0)" />
 
-<div class="scrolling-subtitles">
-  <div class="subtitle-track">
-    <span class="subtitle">made by ryan bui</span>
-    <span class="subtitle">pixels remember everything</span>
-    <span class="subtitle">move to feel</span>
-    <span class="subtitle">poetic glitches are intentional</span>
-    <span class="subtitle">haha stimulation website</span>
-    <span class="subtitle">i'd like to thank chatgpt</span>
-    <span class="subtitle">dm me any questions or cool ideas</span>
-    <span class="subtitle">blame this website for the freaked up posting schedule</span>
-    <span class="subtitle">yo what else do i put here man</span>
-    <span class="subtitle">someone donate me a billion dollars that would be really cool</span>
-    <span class="subtitle">so sad that i couldn't make this moblie responsive, my bad guys</span>
-    <span class="subtitle">next edit coming never!</span>
-    <span class="subtitle">thanks to all my followers, you guys are so cool</span>
-    <span class="subtitle">if anyone can help me make this into moblie please dm thanks!</span>
+  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90ce121fc.png?updatedAt=1756280360487" alt="Skate Overlay" class="skate-overlay parallax-item" data-depth="0.1" data-base-transform="translate3d(-50%, -50%, 0)" />
 
-    <!-- Cloned set for seamless loop -->
-    <span class="subtitle">made by ryan bui</span>
-    <span class="subtitle">pixels remember everything</span>
-    <span class="subtitle">move to feel</span>
-    <span class="subtitle">poetic glitches are intentional</span>
-    <span class="subtitle">haha stimulation website</span>
-    <span class="subtitle">i'd like to thank chatgpt</span>
-    <span class="subtitle">dm me any questions or cool ideas</span>
-    <span class="subtitle">blame this website for the freaked up posting schedule</span>
-    <span class="subtitle">yo what else do i put here man</span>
-    <span class="subtitle">someone donate me a billion dollars that would be really cool</span>
-    <span class="subtitle">so sad that i couldn't make this moblie responsive, my bad guys</span>
-    <span class="subtitle">next edit coming never!</span>
-    <span class="subtitle">thanks to all my followers, you guys are so cool</span>
-    <span class="subtitle">if anyone can help me make this into moblie please dm thanks!</span>
+  <div class="scrolling-subtitles">
+    <div class="subtitle-track">
+      <span class="subtitle">made by ryan bui</span>
+      <span class="subtitle">pixels remember everything</span>
+      <span class="subtitle">move to feel</span>
+      <span class="subtitle">poetic glitches are intentional</span>
+      <span class="subtitle">haha stimulation website</span>
+      <span class="subtitle">i'd like to thank chatgpt</span>
+      <span class="subtitle">dm me any questions or cool ideas</span>
+      <span class="subtitle">blame this website for the freaked up posting schedule</span>
+      <span class="subtitle">yo what else do i put here man</span>
+      <span class="subtitle">pray for my wallet (10$ domain name)</span>
+      <span class="subtitle">so sad that i couldn't make this moblie responsive, my bad guys</span>
+      <span class="subtitle">next edit coming never!</span>
+      <span class="subtitle">thanks to all my followers, you guys are so cool</span>
+      <span class="subtitle">if anyone can help me make this into moblie please dm thanks!</span>
+    </div>
   </div>
-</div>
 
-<img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/awear.png?updatedAt=1756360622993"
-     alt="dogsad"
-     class="parallax-item dogsad-img"
-     data-depth="0.7" />
-  
-  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90realbgce121fclogo.png?updatedAt=1756198095029"
-     alt="cyber"
-     class="parallax-item cyber-img"
-     data-depth="0.5" />
-  
-  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90realbgorangece121fclogo.png?updatedAt=1756365589226"
-     alt="cyber"
-     class="parallax-item orange-img"
-     data-depth="0.1" />
-  
-
-  
-  
- <!-- Parallax & Cursor Script -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const isMobile = window.innerWidth <= 768;
-      const isDesktop = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-
-      if (isMobile) document.body.classList.add("mobile-mode");
-      if (isDesktop) document.body.classList.add("cursor-enabled");
-
-      let targetX = 0, targetY = 0, currentX = 0, currentY = 0;
-
-      function updateTarget(x, y) {
-        targetX = (x / window.innerWidth - 0.5) * 20;
-        targetY = (y / window.innerHeight - 0.5) * 20;
-        if (isDesktop) spawnGhost(x, y);
-      }
-
-      document.addEventListener("mousemove", e => updateTarget(e.clientX, e.clientY));
-      document.addEventListener("touchmove", e => {
-        if (e.touches.length > 0) updateTarget(e.touches[0].clientX, e.touches[0].clientY);
-      });
-
-      const hoverState = new Map();
-      document.querySelectorAll(".parallax-item").forEach(el => {
-        hoverState.set(el, { scale: 1, rotate: 0, targetScale: 1, targetRotate: 0 });
-
-        el.addEventListener("mouseenter", () => {
-          const state = hoverState.get(el);
-          state.targetScale = 1.05;
-          state.targetRotate = 2;
-        });
-
-        el.addEventListener("mouseleave", () => {
-          const state = hoverState.get(el);
-          state.targetScale = 1;
-          state.targetRotate = 0;
-        });
-      });
-
-      function animateParallax() {
-        currentX += (targetX - currentX) * 0.1;
-        currentY += (targetY - currentY) * 0.1;
-
-        document.querySelectorAll(".parallax-item").forEach(el => {
-          const depth = parseFloat(el.dataset.depth) || 1;
-          const moveX = currentX * depth;
-          const moveY = currentY * depth;
-          const base = el.dataset.baseTransform || "";
-
-          const state = hoverState.get(el);
-          state.scale += (state.targetScale - state.scale) * 0.1;
-          state.rotate += (state.targetRotate - state.rotate) * 0.1;
-
-          el.style.transform = `${base} translate(${moveX}px, ${moveY}px) scale(${state.scale}) rotate(${state.rotate}deg)`;
-        });
-
-        requestAnimationFrame(animateParallax);
-      }
-
-      animateParallax();
-
-      function spawnGhost(x, y) {
-        const ghost = document.createElement('div');
-        ghost.className = 'cursor-ghost';
-        ghost.style.left = x + 'px';
-        ghost.style.top = y + 'px';
-        document.body.appendChild(ghost);
-        setTimeout(() => ghost.remove(), 300);
-      }
-    });
-  </script>
+  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/awear.png?updatedAt=1756360622993" alt="dogsad" class="parallax-item dogsad-img" data-depth="0.7" />
+  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90realbgce121fclogo.png?updatedAt=1756198095029" alt="cyber" class="parallax-item cyber-img" data-depth="0.5" />
+  <img src="https://ik.imagekit.io/kojn6gq8q/WEBRBMEDIA/green21dc7a2caa8e66485398a65skate90realbgorangece121fclogo.png?updatedAt=1756365589226" alt="cyber" class="parallax-item orange-img" data-depth="0.1" />
+<button id="toggle-trail" class="trail-btn parallax-item" data-depth="1.6">trail: on</button>
+  <script src="script.js"></script>
   
 </body>
 </html>
-<div id="root"></div>
+    <script src='https://unpkg.com/react@18/umd/react.development.js'></script>
+<script src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>
+<script src='https://unpkg.com/@babel/standalone/babel.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>
