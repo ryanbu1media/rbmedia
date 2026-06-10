@@ -29,25 +29,18 @@ pre { font-size: 13px; line-height: 18.57px; }
 
 /* ──────────────── PARALLAX ITEMS ──────────────── */
 .parallax-item {
-  transition: transform 0.2s ease;
   will-change: transform;
+  transition: transform 0.7s ease-out; /* Keeps the smooth organic linger effect */
 }
 .parallax-item:hover {
-  transform: scale(1.05) rotate(53deg);
   cursor: pointer;
-  transition: transform 0.7s ease;
 }
-
-/* ──────────────── CURSOR GHOST ──────────────── */
-
-
 
 /* ──────────────── CONTAINER ──────────────── */
 .container {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  z-index: ;
 }
 
 /* ──────────────── COLLAGE ELEMENTS ──────────────── */
@@ -77,6 +70,8 @@ pre { font-size: 13px; line-height: 18.57px; }
   left: 5%;
   font-size: 1rem;
   z-index: 2;
+  text-decoration: none;
+  color: inherit;
 }
 
 .name-box {
@@ -220,7 +215,7 @@ pre { font-size: 13px; line-height: 18.57px; }
   transform: translate(-50%, -50%);
   z-index: 9999;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
 }
 .insta-logo-wrapper { left: 44%; }
 .tiktok-logo-wrapper { left: 56%; }
@@ -275,37 +270,102 @@ pre { font-size: 13px; line-height: 18.57px; }
 
 @keyframes scroll-subtitles {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* Scroll halfway through duplicated content */
+  100% { transform: translateX(-50%); } 
 }
 
-
+/* ──────────────── STANDALONE IMAGES ──────────────── */
 .dogsad-img {
   position: absolute;
-  top: 85%;   /* vertical position */
-  left: 2%;   /* further to the left */
-  width: 200px; /* adjust size if needed */
+  top: 85%;
+  left: 2%;
+  width: 200px; 
   height: auto;
   z-index: 5;
 }
 
 .cyber-img {
   position: absolute;
-  top: 30%;   /* vertical position */
-  left: 54%;   /* further to the left */
-  width: 180px; /* adjust size if needed */
+  top: 30%;
+  left: 54%;
+  width: 180px;
   height: auto;
   z-index: 3;
-  filter: blur(0px);   /* adjust value (px) for more/less blur */
+  filter: blur(0px);
 }
-
 
 .orange-img {
   position: absolute;
-  top: 44%;   /* vertical position */
-  left: -30%;   /* further to the left */
-  width: 800px; /* adjust size if needed */
+  top: 44%;
+  left: -30%;
+  width: 800px;
   height: auto;
   transform: rotate(55deg);
   z-index: 0;
-  filter: blur(0px);   /* adjust value (px) for more/less blur */
+  filter: blur(0px);
+}
+
+/* ──────────────── CUSTOM CURSOR & GHOST ──────────────── */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: black;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  mix-blend-mode: difference;
+}
+
+.cursor-ghost {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  z-index: 99998;
+  /* cubic-bezier makes the deceleration trail look much slicker */
+  animation: ghostFade 4s cubic-bezier(0.1, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes ghostFade {
+  0% { 
+    opacity: 0.7; 
+    transform: translate(-50%, -50%) scale(1); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translate(-50%, -50%) scale(0.6); 
+  }
+}
+
+/* ──────────────── RESPONSIVE MEDIA QUERIES ──────────────── */
+@media (max-width: 1024px) {
+  .website-img {
+    width: 60vw;
+    right: 10%;
+  }
+
+  .name-box {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+
+  .extra-img {
+    width: 50vw;
+    left: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .earth, .curve-img, .skate-bg {
+    display: none;
+  }
+  
+  .name-box {
+    top: 30%;
+    width: 90vw;
+  }
 }
