@@ -5,10 +5,10 @@ window.addEventListener("DOMContentLoaded", () => {
   document.body.classList.add("cursor-enabled");
 
   // ───── PARALLAX ─────
-  let targetX = 0,targetY = 0;
-  let currentX = 0,currentY = 0;
+  let targetX = 0, targetY = 0;
+  let currentX = 0, currentY = 0;
 
-  document.addEventListener("mousemove", e => {
+  document.addEventListener("mousemove", (e) => {
     targetX = (e.clientX / window.innerWidth - 0.5) * 20;
     targetY = (e.clientY / window.innerHeight - 0.5) * 20;
 
